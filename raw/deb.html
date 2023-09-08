@@ -227,6 +227,24 @@ sudo systemctl stop elasticsearch.service</pre>
 <p>These commands provide no feedback as to whether Elasticsearch was started
 successfully or not. Instead, this information will be written in the log
 files located in <code class="literal">/var/log/elasticsearch/</code>.</p>
+<p>In addition, if Elasticsearch was installed via <a class="xref" href="deb.html#deb-repo" title="Installing from the APT repository">APT repository</a>, we will see the following log, which
+indicates we will need an exptra step to get <code class="literal">elastic</code> user password:</p>
+<div class="pre_wrapper lang-sh">
+<pre class="programlisting prettyprint lang-sh">[INFO ][o.e.x.s.InitialNodeSecurityAutoConfiguration] Auto-configuration will
+not generate a password for the elastic built-in superuser, as we cannot  determine if there is a terminal attached to
+the elasticsearch process. You can use the `bin/elasticsearch-reset-password` tool to set the password for the elastic
+user.</pre>
+</div>
+<p>The password can be retrieved by:</p>
+<div class="pre_wrapper lang-sh">
+<pre class="programlisting prettyprint lang-sh">sudo /usr/share/elasticsearch/bin/elasticsearch-reset-password -u elastic</pre>
+</div>
+<div class="note admon">
+<div class="icon"></div>
+<div class="admon_content">
+<p>The password above can be used to log into Kibana as user <code class="literal">elastic</code></p>
+</div>
+</div>
 <p>If you have password-protected your Elasticsearch keystore, you will need to provide
 <code class="literal">systemd</code> with the keystore password using a local file and systemd environment
 variables. This local file should be protected while it exists and may be
