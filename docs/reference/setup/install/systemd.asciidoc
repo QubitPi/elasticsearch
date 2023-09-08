@@ -21,6 +21,31 @@ These commands provide no feedback as to whether Elasticsearch was started
 successfully or not. Instead, this information will be written in the log
 files located in `/var/log/elasticsearch/`.
 
+In addition, if Elasticsearch was installed via <<deb-repo,APT repository>>, we will see the following log, which
+indicates we will need an exptra step to get `elastic` user password:
+
+[source,sh]
+------------------------------------------------------------------------------------------------------------------------
+[INFO ][o.e.x.s.InitialNodeSecurityAutoConfiguration] Auto-configuration will
+not generate a password for the elastic built-in superuser, as we cannot  determine if there is a terminal attached to
+the elasticsearch process. You can use the `bin/elasticsearch-reset-password` tool to set the password for the elastic
+user.
+------------------------------------------------------------------------------------------------------------------------
+
+The password can be retrieved by:
+
+[source,sh]
+-------------------------------------------------------------------------
+sudo /usr/share/elasticsearch/bin/elasticsearch-reset-password -u elastic
+-------------------------------------------------------------------------
+
+[NOTE]
+==================================================
+
+The password above can be used to log into Kibana as user `elastic`
+
+==================================================
+
 If you have password-protected your {es} keystore, you will need to provide
 `systemd` with the keystore password using a local file and systemd environment
 variables. This local file should be protected while it exists and may be
