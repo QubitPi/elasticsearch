@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>IS_INFINITE | Elasticsearch Guide | Elastic</title>
+<meta class="elastic" name="content" content="IS_INFINITE | Elasticsearch Guide">
+
+<link rel="home" href="index.html" title="Elasticsearch Guide"/>
+<link rel="up" href="esql-functions.html" title="ES|QL functions"/>
+<link rel="prev" href="esql-is_finite.html" title="IS_FINITE"/>
+<link rel="next" href="esql-is_nan.html" title="IS_NAN"/>
+<meta class="elastic" name="product_version" content=""/>
+<meta class="elastic" name="product_name" content=""/>
+<meta class="elastic" name="website_area" content="documentation"/>
+<meta name="DC.type" content="Learn/Docs/"/>
+<meta name="DC.subject" content=""/>
+<meta name="DC.identifier" content=""/>
+</head>
+<body>
+<div id="content">
+<div class="breadcrumbs">
+<span class="breadcrumb-link"><a href="/guide/">Elastic Docs</a></span>
+<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="index.html">Elasticsearch Guide</a></span>
+<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="esql.html">ES|QL</a></span>
+<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="esql-functions.html">ES|QL functions</a></span>
+</div>
+<div class="navheader">
+<span class="prev">
+<a href="esql-is_finite.html">« <code class="literal">IS_FINITE</code></a>
+</span>
+<span class="next">
+<a href="esql-is_nan.html"><code class="literal">IS_NAN</code> »</a>
+</span>
+</div>
+<div class="section">
+<div class="titlepage"><div><div>
+<h2 class="title"><a id="esql-is_infinite"></a><code class="literal">IS_INFINITE</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/elasticsearch/edit/master/docs/reference/esql/functions/is_infinite.asciidoc">edit</a></h2>
+</div></div></div>
+<p>Returns a boolean that indicates whether its input is infinite.</p>
+<div class="pre_wrapper lang-esql">
+<pre class="programlisting prettyprint lang-esql">ROW d = 1.0
+| EVAL s = IS_INFINITE(d/0)</pre>
+</div>
+</div>
+<div class="navfooter">
+<span class="prev">
+<a href="esql-is_finite.html">« <code class="literal">IS_FINITE</code></a>
+</span>
+<span class="next">
+<a href="esql-is_nan.html"><code class="literal">IS_NAN</code> »</a>
+</span>
+</div>
+</div>
+</body>
+</html>

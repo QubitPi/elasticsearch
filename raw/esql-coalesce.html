@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>COALESCE | Elasticsearch Guide | Elastic</title>
+<meta class="elastic" name="content" content="COALESCE | Elasticsearch Guide">
+
+<link rel="home" href="index.html" title="Elasticsearch Guide"/>
+<link rel="up" href="esql-functions.html" title="ES|QL functions"/>
+<link rel="prev" href="esql-cidr_match.html" title="CIDR_MATCH"/>
+<link rel="next" href="esql-concat.html" title="CONCAT"/>
+<meta class="elastic" name="product_version" content=""/>
+<meta class="elastic" name="product_name" content=""/>
+<meta class="elastic" name="website_area" content="documentation"/>
+<meta name="DC.type" content="Learn/Docs/"/>
+<meta name="DC.subject" content=""/>
+<meta name="DC.identifier" content=""/>
+</head>
+<body>
+<div id="content">
+<div class="breadcrumbs">
+<span class="breadcrumb-link"><a href="/guide/">Elastic Docs</a></span>
+<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="index.html">Elasticsearch Guide</a></span>
+<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="esql.html">ES|QL</a></span>
+<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="esql-functions.html">ES|QL functions</a></span>
+</div>
+<div class="navheader">
+<span class="prev">
+<a href="esql-cidr_match.html">« <code class="literal">CIDR_MATCH</code></a>
+</span>
+<span class="next">
+<a href="esql-concat.html"><code class="literal">CONCAT</code> »</a>
+</span>
+</div>
+<div class="section">
+<div class="titlepage"><div><div>
+<h2 class="title"><a id="esql-coalesce"></a><code class="literal">COALESCE</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/elasticsearch/edit/master/docs/reference/esql/functions/coalesce.asciidoc">edit</a></h2>
+</div></div></div>
+<p>Returns the first non-null value.</p>
+<div class="pre_wrapper lang-esql merge styled">
+<pre class="programlisting prettyprint lang-esql merge styled">ROW a=null, b="b"
+| EVAL COALESCE(a, b)</pre>
+</div>
+<div class="informaltable">
+<table border="1" cellpadding="4px" class="monospaced styled">
+<colgroup>
+<col class="col_1"/>
+<col class="col_2"/>
+<col class="col_3"/>
+</colgroup>
+<thead>
+<tr>
+<th align="left" valign="top">a:null</th>
+<th align="left" valign="top">b:keyword</th>
+<th align="left" valign="top">COALESCE(a,b):keyword</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" valign="top"><p>null</p></td>
+<td align="left" valign="top"><p>b</p></td>
+<td align="left" valign="top"><p>b</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="navfooter">
+<span class="prev">
+<a href="esql-cidr_match.html">« <code class="literal">CIDR_MATCH</code></a>
+</span>
+<span class="next">
+<a href="esql-concat.html"><code class="literal">CONCAT</code> »</a>
+</span>
+</div>
+</div>
+</body>
+</html>

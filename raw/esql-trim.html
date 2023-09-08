@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>TRIM | Elasticsearch Guide | Elastic</title>
+<meta class="elastic" name="content" content="TRIM | Elasticsearch Guide">
+
+<link rel="home" href="index.html" title="Elasticsearch Guide"/>
+<link rel="up" href="esql-functions.html" title="ES|QL functions"/>
+<link rel="prev" href="esql-to_version.html" title="TO_VERSION"/>
+<link rel="next" href="esql-agg-functions.html" title="ES|QL aggregation functions"/>
+<meta class="elastic" name="product_version" content=""/>
+<meta class="elastic" name="product_name" content=""/>
+<meta class="elastic" name="website_area" content="documentation"/>
+<meta name="DC.type" content="Learn/Docs/"/>
+<meta name="DC.subject" content=""/>
+<meta name="DC.identifier" content=""/>
+</head>
+<body>
+<div id="content">
+<div class="breadcrumbs">
+<span class="breadcrumb-link"><a href="/guide/">Elastic Docs</a></span>
+<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="index.html">Elasticsearch Guide</a></span>
+<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="esql.html">ES|QL</a></span>
+<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="esql-functions.html">ES|QL functions</a></span>
+</div>
+<div class="navheader">
+<span class="prev">
+<a href="esql-to_version.html">« <code class="literal">TO_VERSION</code></a>
+</span>
+<span class="next">
+<a href="esql-agg-functions.html">ES|QL aggregation functions »</a>
+</span>
+</div>
+<div class="section">
+<div class="titlepage"><div><div>
+<h2 class="title"><a id="esql-trim"></a><code class="literal">TRIM</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/elasticsearch/edit/master/docs/reference/esql/functions/trim.asciidoc">edit</a></h2>
+</div></div></div>
+<p>Removes leading and trailing whitespaces from strings.</p>
+<div class="pre_wrapper lang-esql merge styled">
+<pre class="programlisting prettyprint lang-esql merge styled">ROW message = "   some text  ",  color = " red "
+| EVAL message = TRIM(message)
+| EVAL color = TRIM(color)</pre>
+</div>
+<div class="informaltable">
+<table border="1" cellpadding="4px" class="monospaced styled">
+<colgroup>
+<col class="col_1"/>
+<col class="col_2"/>
+</colgroup>
+<thead>
+<tr>
+<th align="left" valign="top">message:s</th>
+<th align="left" valign="top">color:s</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" valign="top"><p>some text</p></td>
+<td align="left" valign="top"><p>red</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="navfooter">
+<span class="prev">
+<a href="esql-to_version.html">« <code class="literal">TO_VERSION</code></a>
+</span>
+<span class="next">
+<a href="esql-agg-functions.html">ES|QL aggregation functions »</a>
+</span>
+</div>
+</div>
+</body>
+</html>

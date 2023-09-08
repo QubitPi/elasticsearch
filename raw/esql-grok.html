@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>GROK | Elasticsearch Guide | Elastic</title>
+<meta class="elastic" name="content" content="GROK | Elasticsearch Guide">
+
+<link rel="home" href="index.html" title="Elasticsearch Guide"/>
+<link rel="up" href="esql-processing-commands.html" title="ES|QL processing commands"/>
+<link rel="prev" href="esql-eval.html" title="EVAL"/>
+<link rel="next" href="esql-keep.html" title="KEEP"/>
+<meta class="elastic" name="product_version" content=""/>
+<meta class="elastic" name="product_name" content=""/>
+<meta class="elastic" name="website_area" content="documentation"/>
+<meta name="DC.type" content="Learn/Docs/"/>
+<meta name="DC.subject" content=""/>
+<meta name="DC.identifier" content=""/>
+</head>
+<body>
+<div id="content">
+<div class="breadcrumbs">
+<span class="breadcrumb-link"><a href="/guide/">Elastic Docs</a></span>
+<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="index.html">Elasticsearch Guide</a></span>
+<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="esql.html">ES|QL</a></span>
+<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="esql-processing-commands.html">ES|QL processing commands</a></span>
+</div>
+<div class="navheader">
+<span class="prev">
+<a href="esql-eval.html">« <code class="literal">EVAL</code></a>
+</span>
+<span class="next">
+<a href="esql-keep.html"><code class="literal">KEEP</code> »</a>
+</span>
+</div>
+<div class="section">
+<div class="titlepage"><div><div>
+<h2 class="title"><a id="esql-grok"></a><code class="literal">GROK</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/elasticsearch/edit/master/docs/reference/esql/processing-commands/grok.asciidoc">edit</a></h2>
+</div></div></div>
+<p><code class="literal">GROK</code> enables you to extract structured data out of a string. <code class="literal">GROK</code> matches
+the string against patterns, based on regular expressions, and extracts the
+specified patterns as columns.</p>
+<p>Refer to the <a class="xref" href="grok-processor.html" title="Grok processor">grok processor documentation</a> for the syntax for
+of grok patterns.</p>
+<p>For example:</p>
+<div class="pre_wrapper lang-esql merge styled">
+<pre class="programlisting prettyprint lang-esql merge styled">ROW a = "1953-01-23T12:15:00Z 127.0.0.1 some.email@foo.com 42"
+| GROK a "%{TIMESTAMP_ISO8601:date} %{IP:ip} %{EMAILADDRESS:email} %{NUMBER:num:int}"
+| KEEP date, ip, email, num</pre>
+</div>
+<div class="informaltable">
+<table border="1" cellpadding="4px" class="monospaced styled">
+<colgroup>
+<col class="col_1"/>
+<col class="col_2"/>
+<col class="col_3"/>
+<col class="col_4"/>
+</colgroup>
+<thead>
+<tr>
+<th align="left" valign="top">date:keyword</th>
+<th align="left" valign="top">ip:keyword</th>
+<th align="left" valign="top">email:keyword</th>
+<th align="left" valign="top">num:integer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" valign="top"><p>1953-01-23T12:15:00Z</p></td>
+<td align="left" valign="top"><p>127.0.0.1</p></td>
+<td align="left" valign="top"><p><a href="mailto:some.email@foo.com" class="ulink" target="_top">some.email@foo.com</a></p></td>
+<td align="left" valign="top"><p>42</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="navfooter">
+<span class="prev">
+<a href="esql-eval.html">« <code class="literal">EVAL</code></a>
+</span>
+<span class="next">
+<a href="esql-keep.html"><code class="literal">KEEP</code> »</a>
+</span>
+</div>
+</div>
+</body>
+</html>

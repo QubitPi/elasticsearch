@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DATE_FORMAT | Elasticsearch Guide | Elastic</title>
+<meta class="elastic" name="content" content="DATE_FORMAT | Elasticsearch Guide">
+
+<link rel="home" href="index.html" title="Elasticsearch Guide"/>
+<link rel="up" href="esql-functions.html" title="ES|QL functions"/>
+<link rel="prev" href="esql-date_extract.html" title="DATE_EXTRACT"/>
+<link rel="next" href="esql-date_parse.html" title="DATE_PARSE"/>
+<meta class="elastic" name="product_version" content=""/>
+<meta class="elastic" name="product_name" content=""/>
+<meta class="elastic" name="website_area" content="documentation"/>
+<meta name="DC.type" content="Learn/Docs/"/>
+<meta name="DC.subject" content=""/>
+<meta name="DC.identifier" content=""/>
+</head>
+<body>
+<div id="content">
+<div class="breadcrumbs">
+<span class="breadcrumb-link"><a href="/guide/">Elastic Docs</a></span>
+<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="index.html">Elasticsearch Guide</a></span>
+<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="esql.html">ES|QL</a></span>
+<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="esql-functions.html">ES|QL functions</a></span>
+</div>
+<div class="navheader">
+<span class="prev">
+<a href="esql-date_extract.html">« <code class="literal">DATE_EXTRACT</code></a>
+</span>
+<span class="next">
+<a href="esql-date_parse.html"><code class="literal">DATE_PARSE</code> »</a>
+</span>
+</div>
+<div class="section">
+<div class="titlepage"><div><div>
+<h2 class="title"><a id="esql-date_format"></a><code class="literal">DATE_FORMAT</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/elasticsearch/edit/master/docs/reference/esql/functions/date_format.asciidoc">edit</a></h2>
+</div></div></div>
+<p>Returns a string representation of a date in the provided format. If no format
+is specified, the <code class="literal">yyyy-MM-dd'T'HH:mm:ss.SSSZ</code> format is used.</p>
+<div class="pre_wrapper lang-esql">
+<pre class="programlisting prettyprint lang-esql">FROM employees
+| KEEP first_name, last_name, hire_date
+| EVAL hired = DATE_FORMAT(hire_date, "YYYY-MM-dd")</pre>
+</div>
+</div>
+<div class="navfooter">
+<span class="prev">
+<a href="esql-date_extract.html">« <code class="literal">DATE_EXTRACT</code></a>
+</span>
+<span class="next">
+<a href="esql-date_parse.html"><code class="literal">DATE_PARSE</code> »</a>
+</span>
+</div>
+</div>
+</body>
+</html>

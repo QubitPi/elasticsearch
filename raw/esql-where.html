@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>WHERE | Elasticsearch Guide | Elastic</title>
+<meta class="elastic" name="content" content="WHERE | Elasticsearch Guide">
+
+<link rel="home" href="index.html" title="Elasticsearch Guide"/>
+<link rel="up" href="esql-processing-commands.html" title="ES|QL processing commands"/>
+<link rel="prev" href="esql-stats-by.html" title="STATS ... BY"/>
+<link rel="next" href="esql-functions.html" title="ES|QL functions"/>
+<meta class="elastic" name="product_version" content=""/>
+<meta class="elastic" name="product_name" content=""/>
+<meta class="elastic" name="website_area" content="documentation"/>
+<meta name="DC.type" content="Learn/Docs/"/>
+<meta name="DC.subject" content=""/>
+<meta name="DC.identifier" content=""/>
+</head>
+<body>
+<div id="content">
+<div class="breadcrumbs">
+<span class="breadcrumb-link"><a href="/guide/">Elastic Docs</a></span>
+<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="index.html">Elasticsearch Guide</a></span>
+<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="esql.html">ES|QL</a></span>
+<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="esql-processing-commands.html">ES|QL processing commands</a></span>
+</div>
+<div class="navheader">
+<span class="prev">
+<a href="esql-stats-by.html">« <code class="literal">STATS ... BY</code></a>
+</span>
+<span class="next">
+<a href="esql-functions.html">ES|QL functions »</a>
+</span>
+</div>
+<div class="section">
+<div class="titlepage"><div><div>
+<h2 class="title"><a id="esql-where"></a><code class="literal">WHERE</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/elasticsearch/edit/master/docs/reference/esql/processing-commands/where.asciidoc">edit</a></h2>
+</div></div></div>
+<p>Use <code class="literal">WHERE</code> to produce a table that contains all the rows from the input table
+for which the provided condition evaluates to <code class="literal">true</code>:</p>
+<div class="pre_wrapper lang-esql">
+<pre class="programlisting prettyprint lang-esql">FROM employees
+| KEEP first_name, last_name, still_hired
+| WHERE still_hired == true</pre>
+</div>
+<p>Which, if <code class="literal">still_hired</code> is a boolean field, can be simplified to:</p>
+<div class="pre_wrapper lang-esql">
+<pre class="programlisting prettyprint lang-esql">FROM employees
+| KEEP first_name, last_name, still_hired
+| WHERE still_hired</pre>
+</div>
+<h4><a id="_operators"></a>Operators<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/elasticsearch/edit/master/docs/reference/esql/processing-commands/where.asciidoc">edit</a></h4>
+<p>Refer to <a class="xref" href="esql-syntax.html#esql-operators" title="Operators">Operators</a> for an overview of the supported operators.</p>
+<h4><a id="_functions_2"></a>Functions<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/elasticsearch/edit/master/docs/reference/esql/processing-commands/where.asciidoc">edit</a></h4>
+<p><code class="literal">WHERE</code> supports various functions for calculating values. Refer to
+<a class="xref" href="esql-functions.html" title="ES|QL functions">Functions</a> for more information.</p>
+<div class="pre_wrapper lang-esql">
+<pre class="programlisting prettyprint lang-esql">FROM employees
+| KEEP first_name, last_name, height
+| WHERE length(first_name) &lt; 4</pre>
+</div>
+</div>
+<div class="navfooter">
+<span class="prev">
+<a href="esql-stats-by.html">« <code class="literal">STATS ... BY</code></a>
+</span>
+<span class="next">
+<a href="esql-functions.html">ES|QL functions »</a>
+</span>
+</div>
+</div>
+</body>
+</html>
