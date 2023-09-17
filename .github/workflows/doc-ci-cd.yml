@@ -44,9 +44,10 @@ jobs:
         run: |
           cd ../elastic-docs
           : # https://github.com/elastic/docs/blob/master/doc_build_aliases.sh#L12
-          ./build_docs --doc ../elasticsearch/docs/reference/index.asciidoc  --resource=../elasticsearch/x-pack/docs/ --chunk 1
+          : # https://github.com/elastic/elasticsearch/pull/99304
+          ./build_docs --doc ../elasticsearch/docs/reference/index.asciidoc --chunk 1
       - name: Deploy docs to GitHub Pages
-        if: github.ref == 'refs/heads/master'
+        # if: github.ref == 'refs/heads/master'
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
