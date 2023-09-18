@@ -319,7 +319,7 @@ not generate a password for the elastic built-in superuser, as we cannot  determ
 the elasticsearch process. You can use the `bin/elasticsearch-reset-password` tool to set the password for the elastic
 user.</pre>
 </div>
-<p>The password can be retrieved by:</p>
+<p>The password, in this case, needs to be obtained by regenerating it using:</p>
 <div class="pre_wrapper lang-sh">
 <pre class="programlisting prettyprint lang-sh">sudo /usr/share/elasticsearch/bin/elasticsearch-reset-password -u elastic</pre>
 </div>
@@ -333,11 +333,9 @@ The password above can be used to log into Kibana as user <code class="literal">
 </li>
 <li class="listitem">
 <p><a class="xref" href="change-passwords-native-users.html" title="Setting passwords for native and built-in users">To explicitly set a password</a> for <code class="literal">elastic</code> user</p>
-<pre class="literallayout">[source,sh]
----------------------------------------------------------------------------------------
-sudo /usr/share/elasticsearch/bin/elasticsearch-reset-password -u elastic -i &lt;password&gt;
----------------------------------------------------------------------------------------</pre>
-
+<div class="pre_wrapper lang-sh">
+<pre class="programlisting prettyprint lang-sh">sudo /usr/share/elasticsearch/bin/elasticsearch-reset-password -u elastic -i &lt;password&gt;</pre>
+</div>
 </li>
 </ul>
 </div>
