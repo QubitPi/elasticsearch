@@ -318,6 +318,14 @@ Elasticsearch version running on this node.
 <dd>
 The most recent transport version that this node can communicate with.
 </dd>
+<dt>
+<span class="term">
+<code class="literal">index_version</code>
+</span>
+</dt>
+<dd>
+The most recent index version that this node can read.
+</dd>
 </dl>
 </div>
 <p>The <code class="literal">os</code> flag can be set to retrieve information that concern the operating
@@ -469,7 +477,7 @@ GET /_nodes/nodeId1,nodeId2/info/jvm,process
 # return all the information of only nodeId1 and nodeId2
 GET /_nodes/nodeId1,nodeId2/_all</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/2208.console"></div>
+<div class="console_widget" data-snippet="snippets/2213.console"></div>
 <p>The <code class="literal">_all</code> flag can be set to return all the information - or you can omit it.</p>
 <div class="section">
 <div class="titlepage"><div><div>
@@ -480,7 +488,7 @@ plugins and modules:</p>
 <div class="pre_wrapper lang-console">
 <pre class="programlisting prettyprint lang-console">GET /_nodes/plugins</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/2209.console"></div>
+<div class="console_widget" data-snippet="snippets/2214.console"></div>
 <p>The API returns the following response:</p>
 <div class="pre_wrapper lang-console-result">
 <pre class="programlisting prettyprint lang-console-result">{
@@ -494,6 +502,7 @@ plugins and modules:</p>
       "ip": "192.168.17",
       "version": "{version}",
       "transport_version": 100000298,
+      "index_version": 100000074,
       "build_flavor": "default",
       "build_type": "{build_type}",
       "build_hash": "587409e",
@@ -536,7 +545,7 @@ processors per node:</p>
 <div class="pre_wrapper lang-console">
 <pre class="programlisting prettyprint lang-console">GET /_nodes/ingest</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/2210.console"></div>
+<div class="console_widget" data-snippet="snippets/2215.console"></div>
 <p>The API returns the following response:</p>
 <div class="pre_wrapper lang-console-result">
 <pre class="programlisting prettyprint lang-console-result">{
@@ -550,6 +559,7 @@ processors per node:</p>
       "ip": "192.168.17",
       "version": "{version}",
       "transport_version": 100000298,
+      "index_version": 100000074,
       "build_flavor": "default",
       "build_type": "{build_type}",
       "build_hash": "587409e",

@@ -184,12 +184,12 @@ and go to <span class="strong strong"><strong>Dev Tools &gt; Console</strong></s
 <div class="pre_wrapper lang-console">
 <pre class="programlisting prettyprint lang-console">GET /_cluster/settings?flat_settings</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/2002.console"></div>
+<div class="console_widget" data-snippet="snippets/2007.console"></div>
 <p>The response will look like this:</p>
 <div class="pre_wrapper lang-console-result">
 <pre class="programlisting prettyprint lang-console-result">{
   "persistent": {
-    "cluster.routing.allocation.enable": "none" <a id="CO655-1"></a><i class="conum" data-value="1"></i>
+    "cluster.routing.allocation.enable": "none" <a id="CO654-1"></a><i class="conum" data-value="1"></i>
   },
   "transient": {}
 }</pre>
@@ -198,7 +198,7 @@ and go to <span class="strong strong"><strong>Dev Tools &gt; Console</strong></s
 <table border="0" summary="Callout list">
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO655-1"><i class="conum" data-value="1"></i></a></p>
+<p><a href="#CO654-1"><i class="conum" data-value="1"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>Represents the current configured value that controls if data is partially
@@ -215,16 +215,16 @@ value to allow all the data in the system to be fully allocated:</p>
 <pre class="programlisting prettyprint lang-console">PUT _cluster/settings
 {
   "persistent" : {
-    "cluster.routing.allocation.enable" : "all" <a id="CO656-1"></a><i class="conum" data-value="1"></i>
+    "cluster.routing.allocation.enable" : "all" <a id="CO655-1"></a><i class="conum" data-value="1"></i>
   }
 }</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/2003.console"></div>
+<div class="console_widget" data-snippet="snippets/2008.console"></div>
 <div class="calloutlist">
 <table border="0" summary="Callout list">
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO656-1"><i class="conum" data-value="1"></i></a></p>
+<p><a href="#CO655-1"><i class="conum" data-value="1"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>The new value for the <code class="literal">allocation.enable</code> system-wide configuration
@@ -255,12 +255,12 @@ assignemnt of the shards to allow all shards to be allocated.</p>
 <div class="pre_wrapper lang-console">
 <pre class="programlisting prettyprint lang-console">GET /_cluster/settings?flat_settings</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/2004.console"></div>
+<div class="console_widget" data-snippet="snippets/2009.console"></div>
 <p>The response will look like this:</p>
 <div class="pre_wrapper lang-console-result">
 <pre class="programlisting prettyprint lang-console-result">{
   "persistent": {
-    "cluster.routing.allocation.enable": "none" <a id="CO657-1"></a><i class="conum" data-value="1"></i>
+    "cluster.routing.allocation.enable": "none" <a id="CO656-1"></a><i class="conum" data-value="1"></i>
   },
   "transient": {}
 }</pre>
@@ -269,7 +269,7 @@ assignemnt of the shards to allow all shards to be allocated.</p>
 <table border="0" summary="Callout list">
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO657-1"><i class="conum" data-value="1"></i></a></p>
+<p><a href="#CO656-1"><i class="conum" data-value="1"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>Represents the current configured value that controls if data is partially
@@ -286,16 +286,16 @@ value to allow all the data in the system to be fully allocated:</p>
 <pre class="programlisting prettyprint lang-console">PUT _cluster/settings
 {
   "persistent" : {
-    "cluster.routing.allocation.enable" : "all" <a id="CO658-1"></a><i class="conum" data-value="1"></i>
+    "cluster.routing.allocation.enable" : "all" <a id="CO657-1"></a><i class="conum" data-value="1"></i>
   }
 }</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/2005.console"></div>
+<div class="console_widget" data-snippet="snippets/2010.console"></div>
 <div class="calloutlist">
 <table border="0" summary="Callout list">
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO658-1"><i class="conum" data-value="1"></i></a></p>
+<p><a href="#CO657-1"><i class="conum" data-value="1"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>The new value for the <code class="literal">allocation.enable</code> system-wide configuration

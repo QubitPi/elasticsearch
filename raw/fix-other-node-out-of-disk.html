@@ -100,7 +100,7 @@ the <a class="xref" href="modules-cluster.html#cluster-routing-watermark-high">h
 <div class="pre_wrapper lang-console">
 <pre class="programlisting prettyprint lang-console">GET _cluster/settings?include_defaults&amp;filter_path=*.cluster.routing.allocation.disk.watermark.high*</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/2046.console"></div>
+<div class="console_widget" data-snippet="snippets/2051.console"></div>
 <p>The response will look like this:</p>
 <div class="pre_wrapper lang-console-result">
 <pre class="programlisting prettyprint lang-console-result">{
@@ -128,7 +128,7 @@ In the following example, we show only a machine learning node for readability p
 <div class="pre_wrapper lang-console">
 <pre class="programlisting prettyprint lang-console">GET /_cat/nodes?v&amp;h=name,node.role,disk.used_percent,disk.used,disk.avail,disk.total</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/2047.console"></div>
+<div class="console_widget" data-snippet="snippets/2052.console"></div>
 <p>The response will look like this:</p>
 <div class="pre_wrapper lang-console-result">
 <pre class="programlisting prettyprint lang-console-result">name                node.role disk.used_percent disk.used disk.avail disk.total
@@ -145,7 +145,7 @@ cluster.
 <div class="pre_wrapper lang-console">
 <pre class="programlisting prettyprint lang-console">GET /_cat/nodes?v&amp;h=name,node.role,disk.used_percent,disk.used,disk.avail,disk.total</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/2048.console"></div>
+<div class="console_widget" data-snippet="snippets/2053.console"></div>
 <p>The response will look like this:</p>
 <div class="pre_wrapper lang-console-result">
 <pre class="programlisting prettyprint lang-console-result">name                node.role disk.used_percent disk.used disk.avail disk.total

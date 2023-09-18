@@ -164,7 +164,7 @@ a document.</p>
   ]
 }</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/768.console"></div>
+<div class="console_widget" data-snippet="snippets/773.console"></div>
 <p>This pipeline will insert these named captures as new fields within the document, like so:</p>
 <div class="pre_wrapper lang-console-result">
 <pre class="programlisting prettyprint lang-console-result">{
@@ -255,7 +255,7 @@ the same <code class="literal">or</code> behavior.</p>
   ]
 }</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/769.console"></div>
+<div class="console_widget" data-snippet="snippets/774.console"></div>
 <p>response:</p>
 <div class="pre_wrapper lang-console-result">
 <pre class="programlisting prettyprint lang-console-result">{
@@ -315,7 +315,7 @@ metadata and will not be indexed.</p>
 <div class="pre_wrapper lang-console">
 <pre class="programlisting prettyprint lang-console">GET _ingest/processor/grok</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/770.console"></div>
+<div class="console_widget" data-snippet="snippets/775.console"></div>
 <p>The above request will return a response body containing a key-value representation of the built-in patterns dictionary.</p>
 <div class="pre_wrapper lang-js">
 <pre class="programlisting prettyprint lang-js">{
@@ -332,7 +332,7 @@ names, specify <code class="literal">v1</code> in the optional <code class="lite
 <div class="pre_wrapper lang-console">
 <pre class="programlisting prettyprint lang-console">GET _ingest/processor/grok?ecs_compatibility=v1</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/771.console"></div>
+<div class="console_widget" data-snippet="snippets/776.console"></div>
 <p>By default, the API returns patterns in the order they are read from disk. This
 sort order preserves groupings of related patterns. For example, all patterns
 related to parsing Linux syslog lines stay grouped together.</p>
@@ -341,7 +341,7 @@ by key name instead.</p>
 <div class="pre_wrapper lang-console">
 <pre class="programlisting prettyprint lang-console">GET _ingest/processor/grok?s</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/772.console"></div>
+<div class="console_widget" data-snippet="snippets/777.console"></div>
 <p>The API returns the following response.</p>
 <div class="pre_wrapper lang-js">
 <pre class="programlisting prettyprint lang-js">{

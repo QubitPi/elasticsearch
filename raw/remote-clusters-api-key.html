@@ -36,12 +36,6 @@
 <div class="titlepage"><div><div>
 <h2 class="title"><a id="remote-clusters-api-key"></a>Add remote clusters using API key authentication<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/elasticsearch/edit/master/docs/reference/modules/cluster/remote-clusters-api-key.asciidoc">edit</a></h2>
 </div></div></div>
-<div class="note admon">
-<div class="icon"></div>
-<div class="admon_content">
-<p>Coming in 8.10.</p>
-</div>
-</div>
 <div class="warning admon">
 <div class="icon"></div>
 <div class="admon_content">
@@ -352,9 +346,9 @@ remote cluster and is used to distinguish between local and remote indices.</p>
   "persistent" : {
     "cluster" : {
       "remote" : {
-        "cluster_one" : {    <a id="CO22-1"></a><i class="conum" data-value="1"></i>
+        "cluster_one" : {    <a id="CO21-1"></a><i class="conum" data-value="1"></i>
           "seeds" : [
-            "127.0.0.1:9443" <a id="CO22-2"></a><i class="conum" data-value="2"></i>
+            "127.0.0.1:9443" <a id="CO21-2"></a><i class="conum" data-value="2"></i>
           ]
         }
       }
@@ -367,7 +361,7 @@ remote cluster and is used to distinguish between local and remote indices.</p>
 <table border="0" summary="Callout list">
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO22-1"><i class="conum" data-value="1"></i></a></p>
+<p><a href="#CO21-1"><i class="conum" data-value="1"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>The cluster alias of this remote cluster is <code class="literal">cluster_one</code>.</p>
@@ -375,7 +369,7 @@ remote cluster and is used to distinguish between local and remote indices.</p>
 </tr>
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO22-2"><i class="conum" data-value="2"></i></a></p>
+<p><a href="#CO21-2"><i class="conum" data-value="2"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>Specifies the hostname and remote cluster port of a seed node in the
@@ -399,11 +393,11 @@ cluster with the cluster alias <code class="literal">cluster_one</code>:</p>
       "127.0.0.1:9443"
     ],
     "connected" : true,
-    "num_nodes_connected" : 1,  <a id="CO23-1"></a><i class="conum" data-value="1"></i>
+    "num_nodes_connected" : 1,  <a id="CO22-1"></a><i class="conum" data-value="1"></i>
     "max_connections_per_cluster" : 3,
     "initial_connect_timeout" : "30s",
-    "skip_unavailable" : false, <a id="CO23-2"></a><i class="conum" data-value="2"></i>
-    "cluster_credentials": "::es_redacted::", <a id="CO23-3"></a><i class="conum" data-value="3"></i>
+    "skip_unavailable" : false, <a id="CO22-2"></a><i class="conum" data-value="2"></i>
+    "cluster_credentials": "::es_redacted::", <a id="CO22-3"></a><i class="conum" data-value="3"></i>
     "mode" : "sniff"
   }
 }</pre>
@@ -412,7 +406,7 @@ cluster with the cluster alias <code class="literal">cluster_one</code>:</p>
 <table border="0" summary="Callout list">
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO23-1"><i class="conum" data-value="1"></i></a></p>
+<p><a href="#CO22-1"><i class="conum" data-value="1"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>The number of nodes in the remote cluster the local cluster is
@@ -421,7 +415,7 @@ connected to.</p>
 </tr>
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO23-2"><i class="conum" data-value="2"></i></a></p>
+<p><a href="#CO22-2"><i class="conum" data-value="2"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>Indicates whether to skip the remote cluster if searched through cross-cluster search but
@@ -430,7 +424,7 @@ no nodes are available.</p>
 </tr>
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO23-3"><i class="conum" data-value="3"></i></a></p>
+<p><a href="#CO22-3"><i class="conum" data-value="3"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>If present, indicates the remote cluster has connected using API key
@@ -563,17 +557,17 @@ names are subsequently used to distinguish between local and remote indices.</p>
         cluster_two:
             mode: sniff
             seeds: 127.0.0.1:9444
-            transport.compress: true      <a id="CO24-1"></a><i class="conum" data-value="1"></i>
-            skip_unavailable: true        <a id="CO24-2"></a><i class="conum" data-value="2"></i>
+            transport.compress: true      <a id="CO23-1"></a><i class="conum" data-value="1"></i>
+            skip_unavailable: true        <a id="CO23-2"></a><i class="conum" data-value="2"></i>
         cluster_three:
             mode: proxy
-            proxy_address: 127.0.0.1:9445 <a id="CO24-3"></a><i class="conum" data-value="3"></i></pre>
+            proxy_address: 127.0.0.1:9445 <a id="CO23-3"></a><i class="conum" data-value="3"></i></pre>
 </div>
 <div class="calloutlist">
 <table border="0" summary="Callout list">
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO24-1"><i class="conum" data-value="1"></i></a></p>
+<p><a href="#CO23-1"><i class="conum" data-value="1"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>Compression is explicitly enabled for requests to <code class="literal">cluster_two</code>.</p>
@@ -581,7 +575,7 @@ names are subsequently used to distinguish between local and remote indices.</p>
 </tr>
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO24-2"><i class="conum" data-value="2"></i></a></p>
+<p><a href="#CO23-2"><i class="conum" data-value="2"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>Disconnected remote clusters are optional for <code class="literal">cluster_two</code>.</p>
@@ -589,7 +583,7 @@ names are subsequently used to distinguish between local and remote indices.</p>
 </tr>
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO24-3"><i class="conum" data-value="3"></i></a></p>
+<p><a href="#CO23-3"><i class="conum" data-value="3"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>The address for the proxy endpoint used to connect to <code class="literal">cluster_three</code>.</p>
@@ -603,7 +597,7 @@ names are subsequently used to distinguish between local and remote indices.</p>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="remote-clusters-privileges-api-key"></a>Configure roles and users<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/elasticsearch/edit/master/x-pack/docs/en/security/authentication/remote-clusters-privileges-api-key.asciidoc">edit</a></h3>
+<h3 class="title"><a id="remote-clusters-privileges-api-key"></a>Configure roles and users<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/elasticsearch/edit/master/docs/reference/security/authentication/remote-clusters-privileges-api-key.asciidoc">edit</a></h3>
 </div></div></div>
 <p>To use a remote cluster for cross-cluster replication or cross-cluster search, you need to create user roles with
 <a class="xref" href="defining-roles.html#roles-remote-indices-priv" title="Remote indices privileges">remote indices privileges</a> on the local cluster.</p>
@@ -623,7 +617,7 @@ required by individual users.</p>
 </div>
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="_configure_privileges_for_cross_cluster_replication"></a>Configure privileges for cross-cluster replication<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/elasticsearch/edit/master/x-pack/docs/en/security/authentication/remote-clusters-privileges-api-key.asciidoc">edit</a></h4>
+<h4 class="title"><a id="_configure_privileges_for_cross_cluster_replication"></a>Configure privileges for cross-cluster replication<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/elasticsearch/edit/master/docs/reference/security/authentication/remote-clusters-privileges-api-key.asciidoc">edit</a></h4>
 </div></div></div>
 <p>Assuming the remote cluster is connected under the name of <code class="literal">my_remote_cluster</code>,
 the following request creates a role called <code class="literal">remote-replication</code> on the local
@@ -665,7 +659,7 @@ the <code class="literal">remote-replication</code> role to a user named <code c
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="_configure_privileges_for_cross_cluster_search"></a>Configure privileges for cross-cluster search<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/elasticsearch/edit/master/x-pack/docs/en/security/authentication/remote-clusters-privileges-api-key.asciidoc">edit</a></h4>
+<h4 class="title"><a id="_configure_privileges_for_cross_cluster_search"></a>Configure privileges for cross-cluster search<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/elasticsearch/edit/master/docs/reference/security/authentication/remote-clusters-privileges-api-key.asciidoc">edit</a></h4>
 </div></div></div>
 <p>Assuming the remote cluster is connected under the name of <code class="literal">my_remote_cluster</code>,
 the following request creates a <code class="literal">remote-search</code> role on the local cluster that

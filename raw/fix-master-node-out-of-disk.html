@@ -98,7 +98,7 @@ the <a class="xref" href="modules-cluster.html#cluster-routing-watermark-high">h
 <div class="pre_wrapper lang-console">
 <pre class="programlisting prettyprint lang-console">GET _cluster/settings?include_defaults&amp;filter_path=*.cluster.routing.allocation.disk.watermark.high*</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/2043.console"></div>
+<div class="console_widget" data-snippet="snippets/2048.console"></div>
 <p>The response will look like this:</p>
 <div class="pre_wrapper lang-console-result">
 <pre class="programlisting prettyprint lang-console-result">{
@@ -126,7 +126,7 @@ In the following example, we show only the master nodes for readability purposes
 <div class="pre_wrapper lang-console">
 <pre class="programlisting prettyprint lang-console">GET /_cat/nodes?v&amp;h=name,master,node.role,disk.used_percent,disk.used,disk.avail,disk.total</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/2044.console"></div>
+<div class="console_widget" data-snippet="snippets/2049.console"></div>
 <p>The response will look like this:</p>
 <div class="pre_wrapper lang-console-result">
 <pre class="programlisting prettyprint lang-console-result">name                master node.role disk.used_percent disk.used disk.avail disk.total
@@ -149,7 +149,7 @@ Bring down one of the master nodes.
 <div class="pre_wrapper lang-console">
 <pre class="programlisting prettyprint lang-console">GET /_cat/nodes?v&amp;h=name,master,node.role,disk.used_percent,disk.used,disk.avail,disk.total</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/2045.console"></div>
+<div class="console_widget" data-snippet="snippets/2050.console"></div>
 </li>
 <li class="listitem">
 Only after you have confirmed that your cluster has the initial number of master nodes, move forward to the next one

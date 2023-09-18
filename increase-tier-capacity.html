@@ -190,13 +190,13 @@ setting:</p>
 <div class="pre_wrapper lang-console">
 <pre class="programlisting prettyprint lang-console">GET /my-index-000001/_settings/index.routing.allocation.include._tier_preference?flat_settings</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/2018.console"></div>
+<div class="console_widget" data-snippet="snippets/2023.console"></div>
 <p>The response will look like this:</p>
 <div class="pre_wrapper lang-console-result">
 <pre class="programlisting prettyprint lang-console-result">{
   "my-index-000001": {
     "settings": {
-      "index.routing.allocation.include._tier_preference": "data_warm,data_hot" <a id="CO665-1"></a><i class="conum" data-value="1"></i>
+      "index.routing.allocation.include._tier_preference": "data_warm,data_hot" <a id="CO664-1"></a><i class="conum" data-value="1"></i>
     }
   }
 }</pre>
@@ -205,7 +205,7 @@ setting:</p>
 <table border="0" summary="Callout list">
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO665-1"><i class="conum" data-value="1"></i></a></p>
+<p><a href="#CO664-1"><i class="conum" data-value="1"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>Represents a comma separated list of data tier node roles this index is allowed
@@ -274,14 +274,14 @@ Access Kibana as described above.
 <div class="pre_wrapper lang-console">
 <pre class="programlisting prettyprint lang-console">GET /my-index-000001/_settings/index.number_of_replicas</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/2019.console"></div>
+<div class="console_widget" data-snippet="snippets/2024.console"></div>
 <p>The response will look like this:</p>
 <div class="pre_wrapper lang-console-result">
 <pre class="programlisting prettyprint lang-console-result">{
   "my-index-000001" : {
     "settings" : {
       "index" : {
-        "number_of_replicas" : "2" <a id="CO666-1"></a><i class="conum" data-value="1"></i>
+        "number_of_replicas" : "2" <a id="CO665-1"></a><i class="conum" data-value="1"></i>
       }
     }
   }
@@ -291,7 +291,7 @@ Access Kibana as described above.
 <table border="0" summary="Callout list">
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO666-1"><i class="conum" data-value="1"></i></a></p>
+<p><a href="#CO665-1"><i class="conum" data-value="1"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>Represents the currently configured value for the number of replica shards
@@ -306,7 +306,7 @@ required for the index</p>
 <div class="pre_wrapper lang-console">
 <pre class="programlisting prettyprint lang-console">GET /_cat/nodes?h=node.role</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/2020.console"></div>
+<div class="console_widget" data-snippet="snippets/2025.console"></div>
 <p>The response will look like this, containing one row per node:</p>
 <div class="pre_wrapper lang-console-result">
 <pre class="programlisting prettyprint lang-console-result">himrst
@@ -328,16 +328,16 @@ the maximum value for <code class="literal">index.number_of_replicas</code> is 1
 <pre class="programlisting prettyprint lang-console">PUT /my-index-000001/_settings
 {
   "index" : {
-    "number_of_replicas" : 1 <a id="CO667-1"></a><i class="conum" data-value="1"></i>
+    "number_of_replicas" : 1 <a id="CO666-1"></a><i class="conum" data-value="1"></i>
   }
 }</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/2021.console"></div>
+<div class="console_widget" data-snippet="snippets/2026.console"></div>
 <div class="calloutlist">
 <table border="0" summary="Callout list">
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO667-1"><i class="conum" data-value="1"></i></a></p>
+<p><a href="#CO666-1"><i class="conum" data-value="1"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>The new value for the <code class="literal">index.number_of_replicas</code> index configuration
@@ -366,13 +366,13 @@ setting:</p>
 <div class="pre_wrapper lang-console">
 <pre class="programlisting prettyprint lang-console">GET /my-index-000001/_settings/index.routing.allocation.include._tier_preference?flat_settings</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/2022.console"></div>
+<div class="console_widget" data-snippet="snippets/2027.console"></div>
 <p>The response will look like this:</p>
 <div class="pre_wrapper lang-console-result">
 <pre class="programlisting prettyprint lang-console-result">{
   "my-index-000001": {
     "settings": {
-      "index.routing.allocation.include._tier_preference": "data_warm,data_hot" <a id="CO668-1"></a><i class="conum" data-value="1"></i>
+      "index.routing.allocation.include._tier_preference": "data_warm,data_hot" <a id="CO667-1"></a><i class="conum" data-value="1"></i>
     }
   }
 }</pre>
@@ -381,7 +381,7 @@ setting:</p>
 <table border="0" summary="Callout list">
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO668-1"><i class="conum" data-value="1"></i></a></p>
+<p><a href="#CO667-1"><i class="conum" data-value="1"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>Represents a comma separated list of data tier node roles this index is allowed
@@ -405,14 +405,14 @@ index with unassigned replica shards:</p>
 <div class="pre_wrapper lang-console">
 <pre class="programlisting prettyprint lang-console">GET /my-index-000001/_settings/index.number_of_replicas</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/2023.console"></div>
+<div class="console_widget" data-snippet="snippets/2028.console"></div>
 <p>The response will look like this:</p>
 <div class="pre_wrapper lang-console-result">
 <pre class="programlisting prettyprint lang-console-result">{
   "my-index-000001" : {
     "settings" : {
       "index" : {
-        "number_of_replicas" : "2" <a id="CO669-1"></a><i class="conum" data-value="1"></i>
+        "number_of_replicas" : "2" <a id="CO668-1"></a><i class="conum" data-value="1"></i>
       }
     }
   }
@@ -422,7 +422,7 @@ index with unassigned replica shards:</p>
 <table border="0" summary="Callout list">
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO669-1"><i class="conum" data-value="1"></i></a></p>
+<p><a href="#CO668-1"><i class="conum" data-value="1"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>Represents the currently configured value for the number of replica shards
@@ -437,7 +437,7 @@ required for the index</p>
 <div class="pre_wrapper lang-console">
 <pre class="programlisting prettyprint lang-console">GET /_cat/nodes?h=node.role</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/2024.console"></div>
+<div class="console_widget" data-snippet="snippets/2029.console"></div>
 <p>The response will look like this, containing one row per node:</p>
 <div class="pre_wrapper lang-console-result">
 <pre class="programlisting prettyprint lang-console-result">himrst
@@ -460,16 +460,16 @@ the maximum value for <code class="literal">index.number_of_replicas</code> is 1
 <pre class="programlisting prettyprint lang-console">PUT /my-index-000001/_settings
 {
   "index" : {
-    "number_of_replicas" : 1 <a id="CO670-1"></a><i class="conum" data-value="1"></i>
+    "number_of_replicas" : 1 <a id="CO669-1"></a><i class="conum" data-value="1"></i>
   }
 }</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/2025.console"></div>
+<div class="console_widget" data-snippet="snippets/2030.console"></div>
 <div class="calloutlist">
 <table border="0" summary="Callout list">
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO670-1"><i class="conum" data-value="1"></i></a></p>
+<p><a href="#CO669-1"><i class="conum" data-value="1"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>The new value for the <code class="literal">index.number_of_replicas</code> index configuration

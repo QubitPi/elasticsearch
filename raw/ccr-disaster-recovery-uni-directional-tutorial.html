@@ -72,7 +72,7 @@ Learn more in cross-cluster replication <a class="xref" href="xpack-ccr.html#ccr
 </div>
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_prerequisites_12"></a>Prerequisites<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/elasticsearch/edit/master/docs/reference/ccr/uni-directional-disaster-recovery.asciidoc">edit</a></h3>
+<h3 class="title"><a id="_prerequisites_11"></a>Prerequisites<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/elasticsearch/edit/master/docs/reference/ccr/uni-directional-disaster-recovery.asciidoc">edit</a></h3>
 </div></div></div>
 <p>Before completing this tutorial,
 <a class="xref" href="ccr-getting-started-tutorial.html" title="Tutorial: Set up cross-cluster replication">set up cross-cluster replication</a> to connect two
@@ -97,7 +97,7 @@ PUT _cluster/settings
   }
 }</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/1735.console"></div>
+<div class="console_widget" data-snippet="snippets/1740.console"></div>
 <div class="pre_wrapper lang-console">
 <pre class="programlisting prettyprint lang-console">### On clusterB ###
 PUT /kibana_sample_data_ecommerce2/_ccr/follow?wait_for_active_shards=1
@@ -106,7 +106,7 @@ PUT /kibana_sample_data_ecommerce2/_ccr/follow?wait_for_active_shards=1
   "leader_index": "kibana_sample_data_ecommerce"
 }</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/1736.console"></div>
+<div class="console_widget" data-snippet="snippets/1741.console"></div>
 <div class="important admon">
 <div class="icon"></div>
 <div class="admon_content">
@@ -148,7 +148,7 @@ POST /kibana_sample_data_ecommerce2/_close
 POST /kibana_sample_data_ecommerce2/_ccr/unfollow
 POST /kibana_sample_data_ecommerce2/_open</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/1737.console"></div>
+<div class="console_widget" data-snippet="snippets/1742.console"></div>
 </li>
 <li class="listitem">
 <p>On the client side (Logstash, Beats, Elastic Agent), manually re-enable ingestion of
@@ -163,7 +163,7 @@ POST kibana_sample_data_ecommerce2/_doc/
   "user": "kimchy"
 }</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/1738.console"></div>
+<div class="console_widget" data-snippet="snippets/1743.console"></div>
 </li>
 </ol>
 </div>
@@ -197,7 +197,7 @@ PUT _cluster/settings
   }
 }</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/1739.console"></div>
+<div class="console_widget" data-snippet="snippets/1744.console"></div>
 </li>
 <li class="listitem">
 <p>Existing data needs to be discarded before you can turn any index into a
@@ -207,7 +207,7 @@ deleting any indices on <code class="literal">clusterA</code>.</p>
 <pre class="programlisting prettyprint lang-console">### On clusterA ###
 DELETE kibana_sample_data_ecommerce</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/1740.console"></div>
+<div class="console_widget" data-snippet="snippets/1745.console"></div>
 </li>
 <li class="listitem">
 <p>Create a follower index on <code class="literal">clusterA</code>, now following the leader index in
@@ -220,7 +220,7 @@ PUT /kibana_sample_data_ecommerce/_ccr/follow?wait_for_active_shards=1
   "leader_index": "kibana_sample_data_ecommerce2"
 }</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/1741.console"></div>
+<div class="console_widget" data-snippet="snippets/1746.console"></div>
 </li>
 <li class="listitem">
 <p>The index on the follower cluster now contains the updated documents.</p>
@@ -228,7 +228,7 @@ PUT /kibana_sample_data_ecommerce/_ccr/follow?wait_for_active_shards=1
 <pre class="programlisting prettyprint lang-console">### On clusterA ###
 GET kibana_sample_data_ecommerce/_search?q=kimchy</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/1742.console"></div>
+<div class="console_widget" data-snippet="snippets/1747.console"></div>
 <div class="tip admon">
 <div class="icon"></div>
 <div class="admon_content">

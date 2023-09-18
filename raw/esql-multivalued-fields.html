@@ -49,7 +49,7 @@ POST /_query
   "query": "FROM mv"
 }</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/1556.console"></div>
+<div class="console_widget" data-snippet="snippets/1561.console"></div>
 <p>Multivalued fields come back as a JSON array:</p>
 <div class="pre_wrapper lang-console-result">
 <pre class="programlisting prettyprint lang-console-result">{
@@ -88,7 +88,7 @@ POST /_query
   "query": "FROM mv"
 }</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/1557.console"></div>
+<div class="console_widget" data-snippet="snippets/1562.console"></div>
 <p>And ES|QL sees that removal:</p>
 <div class="pre_wrapper lang-console-result">
 <pre class="programlisting prettyprint lang-console-result">{
@@ -124,7 +124,7 @@ POST /_query
   "query": "FROM mv"
 }</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/1558.console"></div>
+<div class="console_widget" data-snippet="snippets/1563.console"></div>
 <p>And ES|QL also sees that:</p>
 <div class="pre_wrapper lang-console-result">
 <pre class="programlisting prettyprint lang-console-result">{
@@ -161,7 +161,7 @@ POST /_query
   "query": "FROM mv | EVAL b=TO_STRING(b)"
 }</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/1559.console"></div>
+<div class="console_widget" data-snippet="snippets/1564.console"></div>
 <div class="pre_wrapper lang-console-result">
 <pre class="programlisting prettyprint lang-console-result">{
   "columns": [
@@ -189,7 +189,7 @@ POST /_query
   "query": "FROM mv | EVAL b + 2, a + b"
 }</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/1560.console"></div>
+<div class="console_widget" data-snippet="snippets/1565.console"></div>
 <div class="pre_wrapper lang-console-result">
 <pre class="programlisting prettyprint lang-console-result">{
   "columns": [
@@ -236,7 +236,7 @@ POST /_query
   "query": "FROM mv | EVAL b=MV_MIN(b) | EVAL b + 2, a + b"
 }</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/1561.console"></div>
+<div class="console_widget" data-snippet="snippets/1566.console"></div>
 <div class="pre_wrapper lang-console-result">
 <pre class="programlisting prettyprint lang-console-result">{
   "columns": [

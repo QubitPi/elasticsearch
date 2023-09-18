@@ -172,11 +172,11 @@ the <a class="xref" href="put-transform.html" title="Create transform API">creat
   "source": {
     "index": "kibana_sample_data_ecommerce"
   },
-  "dest" : { <a id="CO553-1"></a><i class="conum" data-value="1"></i>
+  "dest" : { <a id="CO552-1"></a><i class="conum" data-value="1"></i>
     "index" : "sample_ecommerce_orders_by_customer"
   },
   "pivot": {
-    "group_by": { <a id="CO553-2"></a><i class="conum" data-value="2"></i>
+    "group_by": { <a id="CO552-2"></a><i class="conum" data-value="2"></i>
       "user": { "terms": { "field": "user" }},
       "customer_id": { "terms": { "field": "customer_id" }}
     },
@@ -190,12 +190,12 @@ the <a class="xref" href="put-transform.html" title="Create transform API">creat
   }
 }</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/1715.console"></div>
+<div class="console_widget" data-snippet="snippets/1720.console"></div>
 <div class="calloutlist">
 <table border="0" summary="Callout list">
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO553-1"><i class="conum" data-value="1"></i></a></p>
+<p><a href="#CO552-1"><i class="conum" data-value="1"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>The destination index for the transform. It is ignored by <code class="literal">_preview</code>.</p>
@@ -203,7 +203,7 @@ the <a class="xref" href="put-transform.html" title="Create transform API">creat
 </tr>
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO553-2"><i class="conum" data-value="2"></i></a></p>
+<p><a href="#CO552-2"><i class="conum" data-value="2"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>Two <code class="literal">group_by</code> fields is selected. This means the transform contains a
@@ -281,7 +281,7 @@ to determine what percentage of the flight time was actually delay.</p>
 {
   "source": {
     "index": "kibana_sample_data_flights",
-    "query": { <a id="CO554-1"></a><i class="conum" data-value="1"></i>
+    "query": { <a id="CO553-1"></a><i class="conum" data-value="1"></i>
       "bool": {
         "filter": [
           { "term":  { "Cancelled": false } }
@@ -289,18 +289,18 @@ to determine what percentage of the flight time was actually delay.</p>
       }
     }
   },
-  "dest" : { <a id="CO554-2"></a><i class="conum" data-value="2"></i>
+  "dest" : { <a id="CO553-2"></a><i class="conum" data-value="2"></i>
     "index" : "sample_flight_delays_by_carrier"
   },
   "pivot": {
-    "group_by": { <a id="CO554-3"></a><i class="conum" data-value="3"></i>
+    "group_by": { <a id="CO553-3"></a><i class="conum" data-value="3"></i>
       "carrier": { "terms": { "field": "Carrier" }}
     },
     "aggregations": {
       "flights_count": { "value_count": { "field": "FlightNum" }},
       "delay_mins_total": { "sum": { "field": "FlightDelayMin" }},
       "flight_mins_total": { "sum": { "field": "FlightTimeMin" }},
-      "delay_time_percentage": { <a id="CO554-4"></a><i class="conum" data-value="4"></i>
+      "delay_time_percentage": { <a id="CO553-4"></a><i class="conum" data-value="4"></i>
         "bucket_script": {
           "buckets_path": {
             "delay_time": "delay_mins_total.value",
@@ -313,12 +313,12 @@ to determine what percentage of the flight time was actually delay.</p>
   }
 }</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/1716.console"></div>
+<div class="console_widget" data-snippet="snippets/1721.console"></div>
 <div class="calloutlist">
 <table border="0" summary="Callout list">
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO554-1"><i class="conum" data-value="1"></i></a></p>
+<p><a href="#CO553-1"><i class="conum" data-value="1"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>Filter the source data to select only flights that are not cancelled.</p>
@@ -326,7 +326,7 @@ to determine what percentage of the flight time was actually delay.</p>
 </tr>
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO554-2"><i class="conum" data-value="2"></i></a></p>
+<p><a href="#CO553-2"><i class="conum" data-value="2"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>The destination index for the transform. It is ignored by <code class="literal">_preview</code>.</p>
@@ -334,7 +334,7 @@ to determine what percentage of the flight time was actually delay.</p>
 </tr>
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO554-3"><i class="conum" data-value="3"></i></a></p>
+<p><a href="#CO553-3"><i class="conum" data-value="3"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>The data is grouped by the <code class="literal">Carrier</code> field which contains the airline name.</p>
@@ -342,7 +342,7 @@ to determine what percentage of the flight time was actually delay.</p>
 </tr>
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO554-4"><i class="conum" data-value="4"></i></a></p>
+<p><a href="#CO553-4"><i class="conum" data-value="4"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>This <code class="literal">bucket_script</code> performs calculations on the results that are returned
@@ -402,17 +402,17 @@ entity is <code class="literal">clientip</code>.</p>
   "source": {
     "index": "kibana_sample_data_logs"
   },
-  "dest" : { <a id="CO555-1"></a><i class="conum" data-value="1"></i>
+  "dest" : { <a id="CO554-1"></a><i class="conum" data-value="1"></i>
     "index" : "sample_weblogs_by_clientip"
   },
-  "sync" : { <a id="CO555-2"></a><i class="conum" data-value="2"></i>
+  "sync" : { <a id="CO554-2"></a><i class="conum" data-value="2"></i>
     "time": {
       "field": "timestamp",
       "delay": "60s"
     }
   },
   "pivot": {
-    "group_by": {  <a id="CO555-3"></a><i class="conum" data-value="3"></i>
+    "group_by": {  <a id="CO554-3"></a><i class="conum" data-value="3"></i>
       "clientip": { "terms": { "field": "clientip" } }
       },
     "aggregations": {
@@ -422,7 +422,7 @@ entity is <code class="literal">clientip</code>.</p>
       "agent_dc": { "cardinality": { "field": "agent.keyword" }},
       "geo.dest_dc": { "cardinality": { "field": "geo.dest" }},
       "responses.total": { "value_count": { "field": "timestamp" }},
-      "success" : { <a id="CO555-4"></a><i class="conum" data-value="4"></i>
+      "success" : { <a id="CO554-4"></a><i class="conum" data-value="4"></i>
          "filter": {
             "term": { "response" : "200"}}
         },
@@ -436,7 +436,7 @@ entity is <code class="literal">clientip</code>.</p>
         },
       "timestamp.min": { "min": { "field": "timestamp" }},
       "timestamp.max": { "max": { "field": "timestamp" }},
-      "timestamp.duration_ms": { <a id="CO555-5"></a><i class="conum" data-value="5"></i>
+      "timestamp.duration_ms": { <a id="CO554-5"></a><i class="conum" data-value="5"></i>
         "bucket_script": {
           "buckets_path": {
             "min_time": "timestamp.min.value",
@@ -449,12 +449,12 @@ entity is <code class="literal">clientip</code>.</p>
   }
 }</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/1717.console"></div>
+<div class="console_widget" data-snippet="snippets/1722.console"></div>
 <div class="calloutlist">
 <table border="0" summary="Callout list">
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO555-1"><i class="conum" data-value="1"></i></a></p>
+<p><a href="#CO554-1"><i class="conum" data-value="1"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>The destination index for the transform.</p>
@@ -462,7 +462,7 @@ entity is <code class="literal">clientip</code>.</p>
 </tr>
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO555-2"><i class="conum" data-value="2"></i></a></p>
+<p><a href="#CO554-2"><i class="conum" data-value="2"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>Configures the transform to run continuously. It uses the <code class="literal">timestamp</code>
@@ -472,7 +472,7 @@ ingestion delay is 60 seconds.</p>
 </tr>
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO555-3"><i class="conum" data-value="3"></i></a></p>
+<p><a href="#CO554-3"><i class="conum" data-value="3"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>The data is grouped by the <code class="literal">clientip</code> field.</p>
@@ -480,7 +480,7 @@ ingestion delay is 60 seconds.</p>
 </tr>
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO555-4"><i class="conum" data-value="4"></i></a></p>
+<p><a href="#CO554-4"><i class="conum" data-value="4"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>Filter aggregation that counts the occurrences of successful (<code class="literal">200</code>)
@@ -491,7 +491,7 @@ value or a range of response codes.</p>
 </tr>
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO555-5"><i class="conum" data-value="5"></i></a></p>
+<p><a href="#CO554-5"><i class="conum" data-value="5"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>This <code class="literal">bucket_script</code> calculates the duration of the <code class="literal">clientip</code> access based
@@ -504,13 +504,13 @@ on the results of the aggregation.</p>
 <div class="pre_wrapper lang-console">
 <pre class="programlisting prettyprint lang-console">POST _transform/suspicious_client_ips/_start</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/1718.console"></div>
+<div class="console_widget" data-snippet="snippets/1723.console"></div>
 <p>Shortly thereafter, the first results should be available in the destination
 index:</p>
 <div class="pre_wrapper lang-console">
 <pre class="programlisting prettyprint lang-console">GET sample_weblogs_by_clientip/_search</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/1719.console"></div>
+<div class="console_widget" data-snippet="snippets/1724.console"></div>
 <p>The search result shows you data like this for each client IP:</p>
 <div class="pre_wrapper lang-js">
 <pre class="programlisting prettyprint lang-js">    "hits" : [
@@ -617,22 +617,22 @@ destination index due to the applied retention policy.</p>
     ]
   },
   "latest": {
-    "unique_key": [ <a id="CO556-1"></a><i class="conum" data-value="1"></i>
+    "unique_key": [ <a id="CO555-1"></a><i class="conum" data-value="1"></i>
       "clientip"
     ],
-    "sort": "timestamp" <a id="CO556-2"></a><i class="conum" data-value="2"></i>
+    "sort": "timestamp" <a id="CO555-2"></a><i class="conum" data-value="2"></i>
   },
-  "frequency": "1m", <a id="CO556-3"></a><i class="conum" data-value="3"></i>
+  "frequency": "1m", <a id="CO555-3"></a><i class="conum" data-value="3"></i>
   "dest": {
     "index": "last-log-from-clientip"
   },
-  "sync": { <a id="CO556-4"></a><i class="conum" data-value="4"></i>
+  "sync": { <a id="CO555-4"></a><i class="conum" data-value="4"></i>
     "time": {
       "field": "timestamp",
       "delay": "60s"
     }
   },
-  "retention_policy": { <a id="CO556-5"></a><i class="conum" data-value="5"></i>
+  "retention_policy": { <a id="CO555-5"></a><i class="conum" data-value="5"></i>
     "time": {
       "field": "timestamp",
       "max_age": "30d"
@@ -643,12 +643,12 @@ destination index due to the applied retention policy.</p>
   }
 }</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/1720.console"></div>
+<div class="console_widget" data-snippet="snippets/1725.console"></div>
 <div class="calloutlist">
 <table border="0" summary="Callout list">
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO556-1"><i class="conum" data-value="1"></i></a></p>
+<p><a href="#CO555-1"><i class="conum" data-value="1"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>Specifies the field for grouping the data.</p>
@@ -656,7 +656,7 @@ destination index due to the applied retention policy.</p>
 </tr>
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO556-2"><i class="conum" data-value="2"></i></a></p>
+<p><a href="#CO555-2"><i class="conum" data-value="2"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>Specifies the date field that is used for sorting the data.</p>
@@ -664,7 +664,7 @@ destination index due to the applied retention policy.</p>
 </tr>
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO556-3"><i class="conum" data-value="3"></i></a></p>
+<p><a href="#CO555-3"><i class="conum" data-value="3"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>Sets the interval for the transform to check for changes in the source
@@ -673,7 +673,7 @@ index.</p>
 </tr>
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO556-4"><i class="conum" data-value="4"></i></a></p>
+<p><a href="#CO555-4"><i class="conum" data-value="4"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>Contains the time field and delay settings used to synchronize the source
@@ -682,7 +682,7 @@ and destination indices.</p>
 </tr>
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO556-5"><i class="conum" data-value="5"></i></a></p>
+<p><a href="#CO555-5"><i class="conum" data-value="5"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>Specifies the retention policy for the transform. Documents that are older
@@ -695,14 +695,14 @@ than the configured value will be removed from the destination index.</p>
 <div class="pre_wrapper lang-console">
 <pre class="programlisting prettyprint lang-console">POST _transform/last-log-from-clientip/_start</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/1721.console"></div>
+<div class="console_widget" data-snippet="snippets/1726.console"></div>
 </div>
 </details>
 <p>After the transform processes the data, search the destination index:</p>
 <div class="pre_wrapper lang-console">
 <pre class="programlisting prettyprint lang-console">GET last-log-from-clientip/_search</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/1722.console"></div>
+<div class="console_widget" data-snippet="snippets/1727.console"></div>
 <p>The search result shows you data like this for each client IP:</p>
 <div class="pre_wrapper lang-js">
 <pre class="programlisting prettyprint lang-js">{
@@ -784,7 +784,7 @@ location.</p>
     "index": "kibana_sample_data_logs"
   },
   "pivot": {
-    "group_by": { <a id="CO557-1"></a><i class="conum" data-value="1"></i>
+    "group_by": { <a id="CO556-1"></a><i class="conum" data-value="1"></i>
       "timestamp": {
         "date_histogram": {
           "field": "timestamp",
@@ -793,13 +793,13 @@ location.</p>
       }
     },
     "aggregations": {
-      "bytes.max": { <a id="CO557-2"></a><i class="conum" data-value="2"></i>
+      "bytes.max": { <a id="CO556-2"></a><i class="conum" data-value="2"></i>
         "max": {
           "field": "bytes"
         }
       },
       "top": {
-        "top_metrics": { <a id="CO557-3"></a><i class="conum" data-value="3"></i>
+        "top_metrics": { <a id="CO556-3"></a><i class="conum" data-value="3"></i>
           "metrics": [
             {
               "field": "clientip"
@@ -817,12 +817,12 @@ location.</p>
   }
 }</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/1723.console"></div>
+<div class="console_widget" data-snippet="snippets/1728.console"></div>
 <div class="calloutlist">
 <table border="0" summary="Callout list">
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO557-1"><i class="conum" data-value="1"></i></a></p>
+<p><a href="#CO556-1"><i class="conum" data-value="1"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>The data is grouped by a date histogram of the time field with a one hour
@@ -831,7 +831,7 @@ interval.</p>
 </tr>
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO557-2"><i class="conum" data-value="2"></i></a></p>
+<p><a href="#CO556-2"><i class="conum" data-value="2"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>Calculates the maximum value of the <code class="literal">bytes</code> field.</p>
@@ -839,7 +839,7 @@ interval.</p>
 </tr>
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO557-3"><i class="conum" data-value="3"></i></a></p>
+<p><a href="#CO556-3"><i class="conum" data-value="3"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>Specifies the fields (<code class="literal">clientip</code> and <code class="literal">geo.src</code>) of the top document to
@@ -906,7 +906,7 @@ descending order. The API call looks like this:</p>
     "index": "kibana_sample_data_ecommerce"
   },
   "pivot": {
-    "group_by": { <a id="CO558-1"></a><i class="conum" data-value="1"></i>
+    "group_by": { <a id="CO557-1"></a><i class="conum" data-value="1"></i>
       "customer_id": {
         "terms": {
           "field": "customer_id"
@@ -915,7 +915,7 @@ descending order. The API call looks like this:</p>
     },
     "aggregations": {
       "last": {
-        "top_metrics": { <a id="CO558-2"></a><i class="conum" data-value="2"></i>
+        "top_metrics": { <a id="CO557-2"></a><i class="conum" data-value="2"></i>
           "metrics": [
             {
               "field": "email"
@@ -936,12 +936,12 @@ descending order. The API call looks like this:</p>
   }
 }</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/1724.console"></div>
+<div class="console_widget" data-snippet="snippets/1729.console"></div>
 <div class="calloutlist">
 <table border="0" summary="Callout list">
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO558-1"><i class="conum" data-value="1"></i></a></p>
+<p><a href="#CO557-1"><i class="conum" data-value="1"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>The data is grouped by a <code class="literal">terms</code> aggregation on the <code class="literal">customer_id</code> field.</p>
@@ -949,7 +949,7 @@ descending order. The API call looks like this:</p>
 </tr>
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO558-2"><i class="conum" data-value="2"></i></a></p>
+<p><a href="#CO557-2"><i class="conum" data-value="2"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>Specifies the fields to return (email and name fields) in a descending order

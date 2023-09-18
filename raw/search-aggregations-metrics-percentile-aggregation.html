@@ -60,18 +60,18 @@ but it can be easily skewed by a single slow response.</p>
   "aggs": {
     "load_time_outlier": {
       "percentiles": {
-        "field": "load_time" <a id="CO334-1"></a><i class="conum" data-value="1"></i>
+        "field": "load_time" <a id="CO333-1"></a><i class="conum" data-value="1"></i>
       }
     }
   }
 }</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/1428.console"></div>
+<div class="console_widget" data-snippet="snippets/1433.console"></div>
 <div class="calloutlist">
 <table border="0" summary="Callout list">
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO334-1"><i class="conum" data-value="1"></i></a></p>
+<p><a href="#CO333-1"><i class="conum" data-value="1"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>The field <code class="literal">load_time</code> must be a numeric field</p>
@@ -115,18 +115,18 @@ must be a value between 0-100 inclusive):</p>
     "load_time_outlier": {
       "percentiles": {
         "field": "load_time",
-        "percents": [ 95, 99, 99.9 ] <a id="CO335-1"></a><i class="conum" data-value="1"></i>
+        "percents": [ 95, 99, 99.9 ] <a id="CO334-1"></a><i class="conum" data-value="1"></i>
       }
     }
   }
 }</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/1429.console"></div>
+<div class="console_widget" data-snippet="snippets/1434.console"></div>
 <div class="calloutlist">
 <table border="0" summary="Callout list">
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO335-1"><i class="conum" data-value="1"></i></a></p>
+<p><a href="#CO334-1"><i class="conum" data-value="1"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>Use the <code class="literal">percents</code> parameter to specify particular percentiles to calculate</p>
@@ -153,7 +153,7 @@ must be a value between 0-100 inclusive):</p>
   }
 }</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/1430.console"></div>
+<div class="console_widget" data-snippet="snippets/1435.console"></div>
 <p>Response:</p>
 <div class="pre_wrapper lang-console-result">
 <pre class="programlisting prettyprint lang-console-result">{
@@ -228,7 +228,7 @@ are in milliseconds but you want percentiles calculated in seconds:</p>
   }
 }</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/1431.console"></div>
+<div class="console_widget" data-snippet="snippets/1436.console"></div>
 </div>
 
 <div class="section">
@@ -296,19 +296,19 @@ This balance can be controlled using a <code class="literal">compression</code> 
       "percentiles": {
         "field": "load_time",
         "tdigest": {
-          "compression": 200    <a id="CO336-1"></a><i class="conum" data-value="1"></i>
+          "compression": 200    <a id="CO335-1"></a><i class="conum" data-value="1"></i>
         }
       }
     }
   }
 }</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/1432.console"></div>
+<div class="console_widget" data-snippet="snippets/1437.console"></div>
 <div class="calloutlist">
 <table border="0" summary="Callout list">
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO336-1"><i class="conum" data-value="1"></i></a></p>
+<p><a href="#CO335-1"><i class="conum" data-value="1"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>Compression controls memory usage and approximation error</p>
@@ -348,19 +348,19 @@ for accuracy by setting parameter <code class="literal">execution_hint</code> to
       "percentiles": {
         "field": "load_time",
         "tdigest": {
-          "execution_hint": "high_accuracy"    <a id="CO337-1"></a><i class="conum" data-value="1"></i>
+          "execution_hint": "high_accuracy"    <a id="CO336-1"></a><i class="conum" data-value="1"></i>
         }
       }
     }
   }
 }</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/1433.console"></div>
+<div class="console_widget" data-snippet="snippets/1438.console"></div>
 <div class="calloutlist">
 <table border="0" summary="Callout list">
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO337-1"><i class="conum" data-value="1"></i></a></p>
+<p><a href="#CO336-1"><i class="conum" data-value="1"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>Optimize TDigest for accuracy, at the expense of performance</p>
@@ -392,20 +392,20 @@ for values up to 1 millisecond and 3.6 seconds (or better) for the maximum track
       "percentiles": {
         "field": "load_time",
         "percents": [ 95, 99, 99.9 ],
-        "hdr": {                                  <a id="CO338-1"></a><i class="conum" data-value="1"></i>
-          "number_of_significant_value_digits": 3 <a id="CO338-2"></a><i class="conum" data-value="2"></i>
+        "hdr": {                                  <a id="CO337-1"></a><i class="conum" data-value="1"></i>
+          "number_of_significant_value_digits": 3 <a id="CO337-2"></a><i class="conum" data-value="2"></i>
         }
       }
     }
   }
 }</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/1434.console"></div>
+<div class="console_widget" data-snippet="snippets/1439.console"></div>
 <div class="calloutlist">
 <table border="0" summary="Callout list">
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO338-1"><i class="conum" data-value="1"></i></a></p>
+<p><a href="#CO337-1"><i class="conum" data-value="1"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p><code class="literal">hdr</code> object indicates that HDR Histogram should be used to calculate the percentiles and specific settings for this algorithm can be specified inside the object</p>
@@ -413,7 +413,7 @@ for values up to 1 millisecond and 3.6 seconds (or better) for the maximum track
 </tr>
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO338-2"><i class="conum" data-value="2"></i></a></p>
+<p><a href="#CO337-2"><i class="conum" data-value="2"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p><code class="literal">number_of_significant_value_digits</code> specifies the resolution of values for the histogram in number of significant digits</p>
@@ -440,18 +440,18 @@ had a value.</p>
     "grade_percentiles": {
       "percentiles": {
         "field": "grade",
-        "missing": 10       <a id="CO339-1"></a><i class="conum" data-value="1"></i>
+        "missing": 10       <a id="CO338-1"></a><i class="conum" data-value="1"></i>
       }
     }
   }
 }</pre>
 </div>
-<div class="console_widget" data-snippet="snippets/1435.console"></div>
+<div class="console_widget" data-snippet="snippets/1440.console"></div>
 <div class="calloutlist">
 <table border="0" summary="Callout list">
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO339-1"><i class="conum" data-value="1"></i></a></p>
+<p><a href="#CO338-1"><i class="conum" data-value="1"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>Documents without a value in the <code class="literal">grade</code> field will fall into the same bucket as documents that have the value <code class="literal">10</code>.</p>
